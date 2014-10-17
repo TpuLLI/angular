@@ -1,0 +1,9 @@
+<div ng-repeat="article in articles.news">
+  <div>
+    <!-- <a ng-href="/news/{{article.id}}">{{article.title}}</a> -->
+    <a ui-sref="layout.news_show({id: article.id})">{{article.title}}</a>
+  </div>
+  <div>{{article.body}}</div>
+
+</div>
+
