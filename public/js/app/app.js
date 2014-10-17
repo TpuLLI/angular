@@ -1,4 +1,4 @@
-angular.module("app", ["ui.router", "ui-bootstrap"])
+angular.module("app", ["ui.router", "ui.bootstrap"])
 
         .config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 
@@ -12,6 +12,16 @@ angular.module("app", ["ui.router", "ui-bootstrap"])
             .state("home", {
               url: "/home",
               templateUrl: "/views/home.html"
+            })
+            .state("container.news", {
+              url: "/news",
+              templateUrl: "/views/news.html",
+              controller: "NewsController"
+            })
+            .state(".container.new", {
+              url: "/article/id",
+              templateUrl: "/views/new.html",
+              controller: "NewsController"
             })
             .state("container.page1", {
               url: "/page1",
