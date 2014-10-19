@@ -1,6 +1,8 @@
-angular.module("app").controller("NewsNewController", function($scope) {
+angular.module("app").controller("NewsNewController", function($scope, Articles, $state) {
   $scope.addNews = function() {
-    console.log($scope.new);
+    Articles.createNew($scope.new).success(function(result) {
+      $state.go("layout.news_index");
+    });
   }
 
 

@@ -1,4 +1,6 @@
-angular.module("app").controller("NewsIndexController", function($scope, $stateParams, Articles) {
-  $scope.articles = Articles;
+angular.module("app").controller("NewsIndexController", function($scope, $stateParams, Articles, $http) {
+  Articles.getNews().success(function(result){
+    $scope.articles = result.news;
+  });
 
 });

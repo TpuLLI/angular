@@ -1,7 +1,8 @@
-<div ng-repeat="article in articles.news">
+<a ui-sref="layout.news_new">Create New</a>
+<div ng-repeat="article in articles">
   <div>
     <!-- <a ng-href="/news/{{article.id}}">{{article.title}}</a> -->
-    <a ui-sref="layout.news_show({id: article.id})">{{article.title}}</a>
+    <a ui-sref="layout.news_show({id: article._id})">{{article.title}}</a>
   </div>
   <div>{{article.body}}</div>
 

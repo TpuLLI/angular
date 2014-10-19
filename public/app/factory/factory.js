@@ -1,17 +1,16 @@
-angular.module("app").factory("Articles", function() {
+angular.module("app").factory("Articles", function($http) {
 
-  return {news: [{
-      id: 1,
-      title: "News1",
-      country: "UA",
-      body: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt sint aliquid, ratione repudiandae porro labore possimus necessitatibus explicabo rerum consectetur vero alias quaerat, expedita. Beatae, delectus atque reprehenderit natus voluptatum!",
-      canPurchase: true
+  return {
+    getNews: function() {
+      return $http.get("/api/news");
     },
-    {
-      id: 2,
-      title: "News2",
-      country: "UK",
-      body: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt sint aliquid, ratione repudiandae porro labore possimus necessitatibus explicabo rerum consectetur vero alias quaerat, expedita. Beatae, delectus atque reprehenderit natus voluptatum!",
-      canPurchase: true
-    }]}
+
+    getNew: function(id) {
+      return $http.get("/api/news/" + id);
+    },
+
+    createNew: function(obj) {
+      return $http.post("/api/news", obj);
+    }
+  }
 });
